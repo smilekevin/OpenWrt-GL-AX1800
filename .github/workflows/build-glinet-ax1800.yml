@@ -24,7 +24,7 @@ on:
       - '.github/workflows/build-glinet-ax1800.yml'
       - 'glinet-ax1800.yml'
     branches:
-      - main
+      - smilekevin-personalized
 
   # schedule:
   #   - cron: 0 16 * * *
