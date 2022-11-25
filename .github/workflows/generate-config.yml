@@ -3,7 +3,7 @@ name: GENERATE CONFIG
 
 on:
   repository_dispatch:
-  workflow_dispatch:
+  #workflow_dispatch:
 
   push:
     paths:
