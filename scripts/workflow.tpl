@@ -24,7 +24,7 @@ on:
       - '.github/workflows/${workflowName}.yml'
       - '${build}.yml'
     branches:
-      - main
+      - smilekevin-personalized
 
   # schedule:
   #   - cron: 0 16 * * *
