@@ -1,3 +1,12 @@
+From 337d88677b496026695ddd1c81bce3b6cf745f48 Mon Sep 17 00:00:00 2001
+From: Ken Zhu <yqzhu.sh@gmail.com>
+Date: Sat, 18 Feb 2023 01:37:24 +0800
+Subject: [PATCH] fix: update hash
+
+---
+ feeds/wifi-ax/mac80211/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/feeds/wifi-ax/mac80211/Makefile b/feeds/wifi-ax/mac80211/Makefile
 index ffcb172d..384e2103 100644
 --- a/feeds/wifi-ax/mac80211/Makefile
@@ -11,3 +20,6 @@ index ffcb172d..384e2103 100644
  PKG_SOURCE:=backports-$(PKG_VERSION).tar.bz2
  PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/backports-$(PKG_VERSION)
  PKG_BUILD_PARALLEL:=1
+-- 
+2.37.0
+
