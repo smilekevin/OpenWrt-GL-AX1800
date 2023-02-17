@@ -68,6 +68,7 @@ jobs:
         ln -sf /workdir/gl-infra-builder $GITHUB_WORKSPACE/gl-infra-builder
         cd $GITHUB_WORKSPACE
         [ -e ${build}.yml ] && mv ${build}.yml /workdir/gl-infra-builder/profiles
+        cp patch_axt1800_5-4/0004-feeds-wifi-ax-mac80211-makefile.patch /workdir/gl-infra-builder/patches-wlan-ap-5.4
 
     - name: run setup.py
       run: |

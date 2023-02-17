@@ -1,0 +1,13 @@
+diff --git a/feeds/wifi-ax/mac80211/Makefile b/feeds/wifi-ax/mac80211/Makefile
+index ffcb172d..384e2103 100644
+--- a/feeds/wifi-ax/mac80211/Makefile
++++ b/feeds/wifi-ax/mac80211/Makefile
+@@ -5,7 +5,7 @@ PKG_NAME:=mac80211
+ PKG_VERSION:=20210222_001-5.4.164-b157d2276
+ PKG_RELEASE:=1
+ PKG_SOURCE_URL:=https://mirror2.openwrt.org/sources/
+-PKG_HASH:=6dfc49a96e0ba9b23d8bae0675105ea4b4c337c4869ee1fd31f65220ab0dc131
++PKG_HASH:=e92901b5150c6d9ac7eafc83187d8819f2c5620c2298504d84f7ecba6423bc71
+ PKG_SOURCE:=backports-$(PKG_VERSION).tar.bz2
+ PKG_BUILD_DIR:=$(KERNEL_BUILD_DIR)/backports-$(PKG_VERSION)
+ PKG_BUILD_PARALLEL:=1
