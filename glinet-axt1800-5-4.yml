@@ -24,7 +24,7 @@ feeds:
   - name: small_package
     uri: https://github.com/kenzok8/small-package.git
     branch: main
-    revision: 74b5f8ecb6a505e8172b72a294cd7cc0ef64e4ec
+    revision: 9eddb01bce7cb1520bc9273b7e25b94e6cbf3c64
 include:
   - wifi-ax
 packages:
@@ -45,3 +45,4 @@ packages:
   - luci-app-ttyd
   - luci-app-serverchan
   - luci-app-transmission
+  - luci-app-uugamebooster
