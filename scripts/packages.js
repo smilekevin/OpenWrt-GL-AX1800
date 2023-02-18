@@ -145,4 +145,8 @@ module.exports = [
 //     name: 'luci-app-frps',
 //     desc: 'frps 网络代理',
 //   },
+  {
+    name: 'luci-app-uugamebooster',
+    desc: 'UU加速器',
+  },
 ];
