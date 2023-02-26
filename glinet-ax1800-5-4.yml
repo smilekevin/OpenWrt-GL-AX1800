@@ -24,7 +24,7 @@ feeds:
   - name: small_package
     uri: https://github.com/kenzok8/small-package.git
     branch: main
-    revision: cf14da590570ef997490c937f2a9e5a05411075f
+    revision: e9c0f2f5113d4cabbb7ec768d383ec571db11742
 include:
   - wifi-ax
 packages:
