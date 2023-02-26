@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: BUILD GLINET AXT1800
+name: BUILD GLINET AX1800
 
 on:
   repository_dispatch:
@@ -21,8 +21,8 @@ on:
 
   push:
     paths:
-      - '.github/workflows/build-glinet-axt1800.yml'
-      - 'glinet-axt1800.yml'
+      - '.github/workflows/build-glinet-ax1800.yml'
+      - 'glinet-ax1800.yml'
     branches:
       - smilekevin-personalized
 
@@ -67,7 +67,7 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH gl-infra-builder
         ln -sf /workdir/gl-infra-builder $GITHUB_WORKSPACE/gl-infra-builder
         cd $GITHUB_WORKSPACE
-        [ -e glinet-axt1800.yml ] && mv glinet-axt1800.yml /workdir/gl-infra-builder/profiles
+        [ -e glinet-ax1800.yml ] && mv glinet-ax1800.yml /workdir/gl-infra-builder/profiles
         cp patch_axt1800_5-4/0004-feeds-wifi-ax-mac80211-makefile.patch /workdir/gl-infra-builder/patches-wlan-ap-5.4
 
     - name: run setup.py
@@ -81,7 +81,7 @@ jobs:
       id: package
       run: |
         cd /workdir/gl-infra-builder/wlan-ap/openwrt
-        ./scripts/gen_config.py glinet-axt1800 glinet_depends glinet_nas luci
+        ./scripts/gen_config.py glinet-ax1800 glinet_depends glinet_nas luci
         git clone https://github.com/gl-inet/glinet4.x.git -b main /workdir/glinet
         ./scripts/feeds update -a
         ./scripts/feeds install -a
@@ -148,9 +148,9 @@ jobs:
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled() && !failure()
       run: |
-        echo "::set-output name=release_tag::AXT1800-$(date +"%Y.%m.%d-%H.%M")"
+        echo "::set-output name=release_tag::AX1800-$(date +"%Y.%m.%d-%H.%M")"
         touch release.txt
-        echo "## 📦‍ 固件下载 | GLINET AXT1800" >> release.txt
+        echo "## 📦‍ 固件下载 | GLINET AX1800" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "- 🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo -e "## ✨ 主要功能\n1. argon主题\n2. argon主题设置\n3. 释放内存\n4. wol 网络唤醒\n5. 磁盘管理工具\n6. smartdns DNS防污染\n7. clash的图形代理软件\n8. aria2下载工具\n9. ZeroTier内网穿透\n10. Turbo ACC 网络加速(支持 Fast Path 或者 硬件 NAT)\n11. 迅雷快鸟\n12. CPU 性能优化调节\n13. ttyd 终端\n14. 微信/Telegram推送\n15. BT下载工具\n16. UU加速器" >> release.txt
         echo "::set-output name=status::success"
